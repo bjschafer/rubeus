@@ -1,0 +1,54 @@
+<head>
+  <title>Rubeus - Key Management</title>
+</head>
+
+<body>
+  <h1>Welcome to Rubeus!</h1>
+
+  <div class="container">
+      <header>
+          <h1>Licence Keys</h1>
+
+          <form class="new-license">
+              <input type="text" name="companyBox" placeholder="Company" />
+              <input type="text" name="productBox" placeholder="Product" />
+              <input type="text" name="editionBox" placeholder="Edition" />
+              <input type="text" name="versionBox" placeholder="Version" />
+              <input type="text" name="keyBox" placeholder="License Key" />
+              <input type="text" name="otherBox" placeholder="Other" />
+              <input type="submit" value="Add" />
+          </form>
+      </header>
+
+      <br />
+      <table class="grid">
+          <tr>
+              <th>Company</th>
+              <th>Product</th>
+              <th>Edition</th>
+              <th>Version</th>
+              <th>License Key</th>
+              <th>Other</th>
+              <th>In use?</th>
+              <th>Delete</th>
+          </tr>
+          {{#each licenses}}
+              {{> license}}
+          {{/each}}
+      </table>
+  </div>
+
+</body>
+
+<template name="license">
+    <tr class="{{#if checked}}checked{{/if}}">
+        <td class="text">{{company}}</td>
+        <td class="text">{{product}}</td>
+        <td class="text">{{edition}}</td>
+        <td class="text">{{version}}</td>
+        <td class="text key">{{key}}</td>
+        <td class="text">{{other}}</td>
+        <td><input type="checkbox" checked="{{checked}}" class="toggle-checked" /></td>
+        <td><button class="delete">&times;</button></td>
+    </tr>
+</template>
