@@ -1,0 +1,152 @@
+$default-font: sans-serif;
+$color-primary-0: #267B40;	// Main Primary color */
+$color-primary-1: #76B98A;
+$color-primary-2: #489960;
+$color-primary-3: #0D5C25;
+$color-primary-4: #003C12;
+
+$color-secondary-1-0: #225867;	// Main Secondary color (1) */
+$color-secondary-1-1: #658F9B;
+$color-secondary-1-2: #3E7281;
+$color-secondary-1-3: #0D3F4D;
+$color-secondary-1-4: #022833;
+
+$color-secondary-2-0: #A66D33;	// Main Secondary color (2) */
+$color-secondary-2-1: #FACDA0;
+$color-secondary-2-2: #CF9861;
+$color-secondary-2-3: #7C4712;
+$color-secondary-2-4: #522900;
+
+$color-complement-0: #A64333;	// Main Complement color */
+$color-complement-1: #FAACA0;
+$color-complement-2: #CF7061;
+$color-complement-3: #7C2012;
+$color-complement-4: #520B00;
+
+body {
+  font-family: $default-font;
+
+  color: $color-complement-4;
+
+  background-color: $color-primary-0;
+  background-image: linear-gradient(to bottom, $color-primary-0, $color-primary-1, 40%);
+  background-attachment: fixed;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.login {
+  position: absolute;
+
+  top: 10px;
+  left: 10px;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  min-height: 100%;
+  background: $color-secondary-1-1;
+}
+
+.notLoggedInMsg {
+  position: relative;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+header {
+  background: $color-secondary-1-0;
+  background-image: linear-gradient(to bottom, $color-secondary-1-0 $color-secondary-1-1 60%);
+  color: $color-secondary-2-1;
+  padding: 20px 15px 15px 15px;
+  position: relative;
+}
+
+.delete {
+  background: none;
+  border: none;
+  float: right;
+  font-size: 1em;
+  font-weight: bold;
+  position: relative;
+}
+
+.toggle-checked {
+  text-align: left;
+  vertical-align: middle;
+  font-weight: bold;
+  background: none;
+  font-size: 1em;
+  border: none;
+  position: relative;
+}
+
+table {
+  animation: 2s ease 0s normal none 1 fadein;
+  border: 0 none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.75em;
+  width: 95%;
+}
+
+th {
+  border: none 0px;
+  font-size: 1.2em;
+  padding-left: 0;
+  text-align: left;
+
+  a {
+    display: block;
+    position: relative;
+  }
+}
+
+td {
+  border: 0 none;
+  font-size: 1.2em;
+  padding: 0.25em 2em 0.25em 0;
+  text-align: left;
+}
+
+tr {
+  height: 55px;
+
+  nth-child(2n) {
+    background: none repeat scroll 0 0 $color-primary-1;
+  }
+
+}
+
+tr.checked {
+  color: $color-complement-2;
+}
+
+tr.checked .text {
+  text-decoration: line-through;
+}
+
+h1 {
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+form {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  position: relative;
+}

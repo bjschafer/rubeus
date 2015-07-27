@@ -3,12 +3,18 @@
 </head>
 
 <body>
-  <h1>Welcome to Rubeus!</h1>
+  <h1><a href="."><img src="/res/logo.png" width="10%" /></a>
+  </h1>
+
+  <div class="login">
+      {{> loginButtons }}
+  </div>
 
   <div class="container">
       <header>
-          <h1>Licence Keys</h1>
+          <h1>License Keys</h1>
 
+          {{#if currentUser }}
           <form class="new-license">
               <input type="text" name="companyBox" placeholder="Company" />
               <input type="text" name="productBox" placeholder="Product" />
@@ -18,9 +24,17 @@
               <input type="text" name="otherBox" placeholder="Other" />
               <input type="submit" value="Add" />
           </form>
+          {{/if}}
       </header>
 
       <br />
+
+      {{#unless currentUser}}
+          <div class="notLoggedInMsg">
+            Why don't you log in and add some keys?
+          </div>
+      {{/unless}}
+      {{#if currentUser }}
       <table class="grid">
           <tr>
               <th>Company</th>
@@ -36,6 +50,7 @@
               {{> license}}
           {{/each}}
       </table>
+      {{/if}}
   </div>
 
 </body>

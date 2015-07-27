@@ -4,7 +4,7 @@ if (Meteor.isClient) {
 
     Template.body.helpers({
         licenses: function () {
-            return Licenses.find({}, {sort: {name: -1}});
+            return Licenses.find({owner: Meteor.userId()}, {sort: {name: -1}});
         }
     });
 
@@ -24,7 +24,8 @@ if (Meteor.isClient) {
                 version: version,
                 key: key,
                 other: other,
-                createdAt: new Date()
+                createdAt: new Date(),
+                owner: Meteor.userId()
             });
 
             event.target.companyBox.value = "";
@@ -36,7 +37,7 @@ if (Meteor.isClient) {
 
             return false;
         }
-    })
+    });
 
     Template.license.events({
         "click .toggle-checked": function () {
@@ -46,6 +47,10 @@ if (Meteor.isClient) {
         "click .delete": function () {
             Licenses.remove(this._id);
         }
+    });
+
+    Accounts.ui.config({
+        passwordSignupFields: "USERNAME_ONLY"
     });
 }
 
